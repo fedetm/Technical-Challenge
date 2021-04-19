@@ -1,0 +1,27 @@
+{% extends "layout.html" %} {% block head %}
+<title>Usuario</title>
+{% if name %}
+<h1>Usuario: {{ name }}</h1>
+{% else %}
+<h1>Usuario</h1>
+{% endif %} 
+<h3>Productos recomendados</h3>
+{% endblock head %} {% block content %}
+<div class="content">
+  <table>
+    <thead>
+      <tr>
+        <th>Productos</th>
+      </tr>
+      <tr>
+    </thead>
+    <tbody>
+      {% for product in products %}
+          <td>{{ product }}</td>
+          <tr></tr>
+      {% endfor %}
+      </tr>
+    </tbody>
+  </table>
+</div>
+{% endblock content %}
