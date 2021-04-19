@@ -32,6 +32,7 @@ class Home extends Component {
       },
       body: JSON.stringify(data),
     });
+    window.location = "http://127.0.0.1:5000/"+this.state.user;
   };
 
   /* getUrl = (event) => {

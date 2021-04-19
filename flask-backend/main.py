@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 from flask_bootstrap import Bootstrap
 from py2neo import Graph, Node, Relationship
 from neomodel import StructuredNode, StringProperty, RelationshipTo, RelationshipFrom, config
@@ -56,10 +56,10 @@ def index():
     if request.method == 'POST':
         req = request.json
         agregarInformacionBd(req["user"], req["order"], req["product"])
-        return render_template('index.html', token="My Neighbor things")
+        return redirect("http://127.0.0.1:5000/"+req["user"], code=302)
     
     if request.method == 'GET':
-        return render_template('index.html', token=User.nodes.all())
+        return render_template('index.html')
 
 @app.route('/<name>', methods=['POST', 'GET'])
 def usuario(name=None):

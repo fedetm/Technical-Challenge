@@ -31,5 +31,15 @@
       </tr>
     </tbody>
   </table>
+  <button 
+    variant="primary"
+    onclick="window.location.href='{{ url_for('index') }}';">
+    Volver
+  </button>
+  <button 
+    variant="primary" 
+    onclick="window.location.href='{{ '/recomend/'+name }}';">
+    Productos recomendados
+  </button>
 </div>
 {% endblock content %}
